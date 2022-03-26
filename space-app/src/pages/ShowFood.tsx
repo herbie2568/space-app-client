@@ -4,33 +4,38 @@ import axios from 'axios'
 import {Route, Routes, Link} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 
-const ShowFood = (props:any) => {
-
+const ShowFood = (props:any, fod:any) => {
     const params = useParams()
-    // const [food, setFood] = useState<[]>([])
+    const [food, setFood] = useState<any['']>([])
    
     const getFood = () => {
         axios
-        .get('https://space-meteor.herokuapp.com/food/' + params._id)
-        .then((response) => {
-            props.setFood(response.data);
-          });
-      };
+          .get('https://space-meteor.herokuapp.com/food/')
+          .then(
+            (response) => setFood(response.data),
+            (err) => console.error(err)
+          )
+          .catch((error) => console.error(error))
+      }
 
-
-    useEffect(() => {
-        getFood();
+      useEffect(() => {
+        axios.get('https://space-meteor.herokuapp.com/food/' + params.id)
+          .then((response) =>
+            setFood(response.data))
       }, []);
     
 
 
 console.log('suck it bitchass');
-console.log(props.food);
+console.log(food.name);
 
     return (
         <>
         <h3>SUCK MY big COCK</h3>
-        <h1>{props.food.name}</h1>
+        <img src = {food.image}></img>
+        <h1>{food.name}</h1>
+        <h2>{food.description}</h2>
+        <h3>{food.price}</h3>
         </>
     )
 }

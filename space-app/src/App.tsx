@@ -10,9 +10,11 @@ import Tickets from './pages/Tickets'
 import ShowFood from './pages/ShowFood'
 import {useState,useEffect} from 'react';
 import axios from 'axios'
+import ShowGears from './pages/ShowGears'
 
 const App: React.FC = () => {
   const [food, setFood] = useState<[]>([])
+  const [gears, setGears] = useState<[]>([])
   
 
   const getFood = () => {
@@ -24,6 +26,16 @@ const App: React.FC = () => {
       )
       .catch((error) => console.error(error))
   }
+
+  const getGears = () => {
+    axios
+    .get('https://space-meteor.herokuapp.com/gear')
+    .then(
+      (response) => setGears(response.data),
+      (err) => console.error(err)
+    )
+    .catch((error) => console.error(error))
+}
   return(
       <>
 
@@ -39,10 +51,12 @@ const App: React.FC = () => {
       <Route path = '/planets' element = {<Planets />}/>
       <Route path = '/tickets' element = {<Tickets />}/>      
       <Route path = '/shop' element = {<Shop />}/>
-      <Route path = '/food' element = {<Food />}/>
-      <Route path = '/gear' element = {<Gears />}/>
+      <Route path = '/food/*' element = {<Food />}/>
+      <Route path = '/gear/*' element = {<Gears />}/>
       <Route path = '/food/:id' element = {<ShowFood food = {food}/>}/>
+      <Route path = '/gear/:id' element = {<ShowGears gears = {gears}/>}/>
       </Routes>
+      
       
 
       </>
