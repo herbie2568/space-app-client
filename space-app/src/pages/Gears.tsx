@@ -13,7 +13,7 @@ const GearPage: React.FC = (props:any) => {
 
     const getGears = () => {
         axios
-        .get('https://space-meteor.herokuapp.com/food')
+        .get('https://space-meteor.herokuapp.com/gear')
         .then(
           (response) => setGears(response.data),
           (err) => console.error(err)
