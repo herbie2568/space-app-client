@@ -16,7 +16,7 @@ a {
 }
 
 img {
-  width: 250px;
+  width: 150px;
 }
 
 .planetContainer, .gearContainer, .foodContainer {
@@ -41,11 +41,56 @@ img {
   z-index: -1;
 }
 
-video {
+video, .rings {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.showModal {
+    /* background: black; */
+    width: 400px;
+    padding: 50px;
+    border-radius: 5%;
+
+}
+
+.showPlanet {
+    transition-duration: 0.4s;
+}
+
+.showPlanet:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.Krypton {
+
+}
+
+.Iris-Cream {
+
+}
+
+.Sauna {
+
+}
+
+.Breakup {
+
+}
+
+.Flags {
+
+}
+
+.GOP {
+
+}
+
+.Z {
+
 }

@@ -11,11 +11,12 @@ import ShowFood from './pages/ShowFood'
 import {useState,useEffect} from 'react';
 import axios from 'axios'
 import ShowGears from './pages/ShowGears'
+import AddPlanet from './pages/AddPlanet'
 
 const App: React.FC = () => {
   const [food, setFood] = useState<[]>([])
   const [gears, setGears] = useState<[]>([])
-  
+
 
   const getFood = () => {
       axios
@@ -39,25 +40,27 @@ const App: React.FC = () => {
   return(
       <>
 
-   
+
        <nav>
         <Link to ='/home'>Home</Link>
-        <Link to ='/planets'>Planets</Link> 
-        <Link to ='/shop'>Shop</Link> 
-        <Link to ='/tickets'>Tickets</Link> 
+        <Link to ='/planets'>Planets</Link>
+        <Link to ='/newplanet'>Add Planet</Link>
+        <Link to ='/shop'>Shop</Link>
+        <Link to ='/tickets'>Tickets</Link>
       </nav>
       <Routes>
       <Route path = '/home' element = {<Home />}/>
       <Route path = '/planets' element = {<Planets />}/>
-      <Route path = '/tickets' element = {<Tickets />}/>      
+      <Route path = '/tickets' element = {<Tickets />}/>
       <Route path = '/shop' element = {<Shop />}/>
       <Route path = '/food/*' element = {<Food />}/>
       <Route path = '/gear/*' element = {<Gears />}/>
+      <Route path = '/newplanet' element = {<AddPlanet />}/>
       <Route path = '/food/:id' element = {<ShowFood food = {food}/>}/>
       <Route path = '/gear/:id' element = {<ShowGears gears = {gears}/>}/>
       </Routes>
-      
-      
+
+
 
       </>
   )
