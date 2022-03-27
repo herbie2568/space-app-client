@@ -48,6 +48,9 @@ const Planets:React.FC  = (props:any) => {
   
     return (
       <>
+      <div className='showcase'>
+    <video src="https://i.imgur.com/cUgXEi6.mp4" loop muted autoPlay={true}></video>
+    </div>
       <Add />
       <h1>TRAVEL TO THE PLANETS!</h1>
       <div className = 'planetContainer'>
