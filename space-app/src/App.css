@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
 * {
-  /* border: 1px blue solid; */
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 
 body {
   background: black;
   color: white;
+  height: 100%;
+  margin: 0;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 200;
 }
 
 a {
@@ -16,18 +23,26 @@ a {
 }
 
 img {
-  width: 150px;
+  width: 250px;
 }
 
-.planetContainer, .gearContainer, .foodContainer {
+.ticketBackground {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+
+ .gearContainer, .foodContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: 3vw;
+
 }
 
-.planetCard, .gearCard, .foodCard {
+.planetCard {
   width: 250px;
 }
 
@@ -41,6 +56,18 @@ img {
   z-index: -1;
 }
 
+.wallpaper {
+  display: flex;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  filter: grayscale();
+}
+
 video, .rings {
   width: 100vw;
   height: 100vh;
@@ -50,47 +77,459 @@ video, .rings {
   left: 0;
 }
 
-.showModal {
-    /* background: black; */
-    width: 400px;
-    padding: 50px;
-    border-radius: 5%;
+.ticketForm {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50vh;
+  gap: 40px;
+}
 
+.ticketForm form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+.ticketForm input {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 25px;
+}
+
+.ticketForm input[type=date] {
+  margin-right: 20px;
+}
+
+.ticketForm input[type=submit] {
+  width: 50px;
+  height: 25px;
+}
+
+.ticketForm input[type=text] {
+  margin-left: 70px;
+}
+
+.ticketForm select {
+  margin-left: 20px;
+  width: 300px;
+  height: 25px;
+}
+
+.showModal {
+  /* background: black; */
+  width: 500px;
+  padding: 50px;
+
+}
+.showInfo h2{
+text-align: center;
+margin-bottom: 10px;
+font-weight: 400;
+font-size: 26px;
+}
+
+.showInfo h3{
+  font-weight: 300;
+}
+
+.showImageDiv {
+  text-align: center;
+}
+
+span {
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+
+
+.showDescription {
+  margin-bottom: 10px;
 }
 
 .showPlanet {
-    transition-duration: 0.4s;
+  margin-top: 25vh;
+  transition-duration: 0.4s;
 }
 
 .showPlanet:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
-.Krypton {
-
+/* planet order */
+.Breakup img{
+  width: 50%;
+  margin-top: 30vh;
 }
 
-.Iris-Cream {
-
-}
-
-.Sauna {
-
-}
-
-.Breakup {
+.Breakup, .Sauna, .GOP, .Krypton, .Flags, .Z, .Iris-Cream {
+  text-align: center;
 
 }
 
-.Flags {
+.Sauna img{
+  width: 70%;
+  margin-top: 30vh;
+}
+
+.GOP img{
+  width: 50%
 
 }
 
 .GOP {
+  /* padding-top: 20px; */
+}
+
+.Krypton img{
+  width: 70%;
+  /* margin-bottom: 7px; */
+}
+
+.Flags img {
+  width: 80%;
+  margin-top: 30vh;
+}
+
+
+.Z img{
+  width: 70%;
+  margin-top: 30vh;
+}
+
+.Iris-Cream img{
+  width: 80%;
+}
+
+.shopNav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15vw;
+  margin-top: 300px;
+}
+
+.shopNav div {
+    display: flex;
+    flex-direction: column;
+}
+
+.shopGear {
+    align-self: center;
+    font-size: 2em;
+}
+
+.shopFood {
+    align-self: center;
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+.shopImage {
+    transition-duration: 0.4s;
+}
+
+.shopImage:hover {
+    transform: scale(1.05)
+}
+
+.sunImage{
+  width: 330px;
+  /* position: relative; */
+  /* top: 20vh; */
+  margin-left: -130px;
+}
+
+.planetContainer {
+  display: flex;
+  /* margin-left: 30vw; */
+  flex-direction: row;
+  justify-content: flex-start;
+  /* margin-right: 5vw; */
+  /* gap: 3vw; */
+  /* margin-top: vh; */
+  /* margin-left: 20vw; */
+}
+
+.planetContainer img {
+  align-self: center;
+}
+
+.logo {
+  width: 125px;
+  margin-left: 30px;
+  margin-top: 25px;
+}
+
+.logoHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.logoName {
+  align-self: center;
+  font-size: 4em;
+  margin-top: 15px;
+}
+
+.missionDiv {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.missionText{
+  width: 600px;
+  font-size: 3.5em;
+  align-self: center;
+}
+
+.planetsButton {
+  padding: 10px 20px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  margin-top: 30px;
+  transition-duration: 0.4s;
+}
+
+.planetsButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navBarSmall{
+  display: flex;
+  flex-direction: row;
+
+  gap: 5vw;
+  margin-left: 3vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.account {
+  align-self: center;
+  margin-right: 30px;
+  border: 1px solid white;
+  padding: 7px 15px;
+  margin-left: 20px;
+}
+
+
+.link {
+  font-weight: 300;
+  font-size: 18px;
+  transition-duration: 0.4s;
+}
+
+.link:hover {
+  transform: scale(1.05);
+}
+
+.shopLink {
+  font-weight: 200;
+  font-size: 18px;
+  transition-duration: 0.4s;
+}
+
+.shopLink:hover {
+  transform: scale(1.05);
+}
+
+.btn {
+
+  border: 1px solid white;
+  padding: 7px 15px;
+  background: transparent;
+  color: white;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 300;
 
 }
 
-.Z {
+.planetHeader {
+  font-weight: 200;
+  text-align: center;
+  margin-top: 5vh;
+  font-size: 2.5em;
+}
 
+.shopNavBar {
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+  justify-content: center;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}
+
+.shopHeader {
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.foodName, .foodPrice {
+  text-align: center;
+  font-weight: 300;
+
+}
+
+.foodName {
+    margin-top: 20px;
+}
+
+.showStuff {
+  width: 600px;
+  text-align: center;
+
+}
+
+.showStuffDiv {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.gearContainer {
+    margin-top: 10vh;
+}
+
+.offBlack {
+    background: #0d0d0d;
+    text-align: center;
+    width: 400px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.offBlack:hover {
+    cursor:pointer;
+}
+
+.showGearImage {
+    width: 400px;
+}
+
+.divider {
+    height: 2px;
+    background: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.offBlackShow {
+    background: #0d0d0d;
+    text-align: center;
+    width: 600px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+
+}
+
+.showStuff h1 {
+    font-weight: 400;
+}
+
+.showStuff h2 {
+    font-weight: 300;
+}
+
+.showStuff h4 {
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.addToCart {
+    padding: 10px 40px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-top: 30px;
+    margin-bottom: 10vh;
+    font-size: 16px;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 300;
+    transition-duration: 0.4s;
+}
+
+.addToCart:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.addTicketForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartCat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-top: 5vh;
+}
+
+.cartCat li {
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.divideDiv {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.cartDivider {
+    height: 1px;
+    background: white;
+    width: 43%;
+    margin: 20px 0 30px 0;
+
+}
+
+.offBlackCart {
+    width: 200px;
+    background: #0d0d0d;
+    text-align: center;
+
+}
+
+.cartCard {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartStuff h3, h4 {
+    align-self: center;
 }

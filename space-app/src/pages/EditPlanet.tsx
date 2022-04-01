@@ -20,7 +20,7 @@ const [planet, setPlanet] = useState(emptyPlanet)
 // }
 
 // const handleNewImage = (event:any)=>{
-// setNewImage(event.target.value);      
+// setNewImage(event.target.value);
 // }
 
 // const handleNewDescription = (event:any)=>{
@@ -63,12 +63,12 @@ const [planet, setPlanet] = useState(emptyPlanet)
 const handleChange = (event:any) => {
     setPlanet({ ...planet, [event.target.name]: event.target.value })
   }
-  
+
   const handleSubmit = (event:any) => {
     event.preventDefault()
     props.handleUpdate(planet)
   }
-  
+
 
 return (
     <>
@@ -125,6 +125,9 @@ return (
             value={planet.activity}
             onChange={handleChange}
           />
+          <input className = 'addInput' type = 'text' placeholder = 'Weather...' onChange={handleChange}/><br/>
+          <input className = 'addInput' type = 'text' placeholder = 'Distance from Sun...' onChange={handleChange}/><br/>
+          <input className = 'addInput' type = 'text' placeholder = 'Day length in hours...' onChange={handleChange}/><br/>
           <input type="submit" />
         </form>
       </details>

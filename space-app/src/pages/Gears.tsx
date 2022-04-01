@@ -4,12 +4,12 @@ import axios from 'axios'
 import '../App.css';
 import {Link, Routes, Route, Router, useNavigate } from 'react-router-dom'
 import ShowGears from './ShowGears'
-
+import Nav from './Nav'
 
 const GearPage: React.FC = (props:any) => {
     const [gears, setGears] = useState<[]>([])
     let navigate = useNavigate()
-    
+
 
     const getGears = () => {
         axios
@@ -26,17 +26,19 @@ const GearPage: React.FC = (props:any) => {
        }, [])
 
     return (
-        
+
         <>
-                <nav>
-            <Link to = '/food'>Food</Link>
-            <Link to = '/gear'>Gear</Link>
+        <Nav/>
+        <img className = 'wallpaper' src = 'https://i.imgur.com/ywwncu9.jpg'></img>
+        <nav className="shopNavBar">
+            <Link className = 'shopLink' to = '/food'>FOOD</Link>
+            <Link className = 'shopLink' to = '/gear'>GEAR</Link>
         </nav>
 
-        <h1>AMAZING SPACE GEAR</h1>
+        <h1 className = 'shopHeader'>FEATURED PRODUCTS</h1>
 
           <div className = 'gearContainer'>
-            {gears?.map((gear:any, index)=>{ 
+            {gears?.map((gear:any, index)=>{
             return (
                 <>
                 <div>
@@ -45,9 +47,12 @@ const GearPage: React.FC = (props:any) => {
                   </Routes>
                 </div>
             <div className = 'gearCard' key = {gear._id} >
-            <h3>{gear.name}</h3>
-            <img onClick = {() => {navigate('/gear/' + gear._id)} } src = {gear.image}></img>
-            <h4>{gear.description}</h4>
+            <div onClick = {() => {navigate('/gear/' + gear._id)} } className = 'offBlack'>
+            <img  src = {gear.image}></img>
+            </div>
+            <h3 className = 'foodName'>{gear.name}</h3>
+
+            <h4 className = 'foodPrice'>${gear.price}</h4>
             </div>
             </>
             )
@@ -58,4 +63,3 @@ const GearPage: React.FC = (props:any) => {
     )
 }
 export default GearPage
-

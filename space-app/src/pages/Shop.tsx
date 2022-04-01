@@ -4,15 +4,23 @@ import Gears from './Gears';
 import Food from './Food';
 import axios from 'axios'
 import {Route, Routes, Link} from 'react-router-dom'
-
+import Nav from './Nav'
 const Shop = () => {
     return (
         <>
-        <nav>
-            <Link to = '/food'>Food</Link>
-            <Link to = '/gear'>Gear</Link>
-        </nav>
-       
+        <Nav />
+        <img className = 'wallpaper' src = 'https://i.imgur.com/ywwncu9.jpg'></img>
+        <div className='shopNav'>
+        <div className = 'shopImage'>
+        <Link to = '/gear'><img  src = 'https://i.imgur.com/uwvs2lz.png'></img></Link>
+        <div className = 'shopGear'>GEAR</div>
+        </div>
+        <div className = 'shopImage'>
+         <Link to = '/food'><img  src = 'https://i.imgur.com/jerWGsZ.png'></img></Link>
+         <div className = 'shopFood'>FOOD</div>
+         </div>
+        </div>
+
         </>
     )
 }
