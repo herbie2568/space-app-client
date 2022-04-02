@@ -4,6 +4,7 @@ import axios from 'axios'
 import {Route, Routes, Link} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import Nav from './/Nav'
+import Footer from './Footer'
 
 const ShowGears = (props:any, gear:any) => {
     const params = useParams()
@@ -61,7 +62,7 @@ console.log(gears);
         <div className = 'showStuff'>
         <div className = 'offBlackShow'><img className = 'showGearImage' src = {gears.image}></img></div>
         <h1>{gears.name}</h1>
-        <h2>${gears.price}</h2>
+        <h2>${gears.price_string}</h2>
         <div className = 'divider'></div>
         <h4>{gears.description}</h4>
 
@@ -70,7 +71,7 @@ console.log(gears);
         </form>
         </div>
         </div>
-
+        <Footer />
         </>
     )
 }

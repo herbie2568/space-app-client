@@ -147,7 +147,7 @@ const Planets:React.FC  = (props:any) => {
         description = {planet.description}
         ticket_price = {planet.ticket_price}
         date_found = {planet.date_found}
-        activity = {planet.activity} weather = {planet.weather} distance = {planet.distance} day_length= {planet.day_length}/>
+        activity = {planet.activity} weather = {planet.weather} distance = {planet.distance} day_length= {planet.day_length} img1 = {planet.img1} img2 = {planet.img2} img3 = {planet.img3}/>
         {props.username ?
         <Edit handleUpdate={handleUpdate} id={planet._id}/>
         : null }

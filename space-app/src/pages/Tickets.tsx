@@ -5,6 +5,7 @@ import '../App.css';
 import AddTickets from './AddTicket'
 import {Link, Routes, Route, useNavigate,} from "react-router-dom";
 import Nav from './Nav'
+import Footer from './Footer'
 
 
 const Tickets = () => {
@@ -97,6 +98,7 @@ const Tickets = () => {
 
         </div>
         </div>
+        <Footer />
         </>
     )
 }

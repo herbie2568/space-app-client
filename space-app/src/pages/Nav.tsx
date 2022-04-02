@@ -13,7 +13,7 @@ const Nav = (props:any) => {
         <Link className = 'link' to ='/tickets'>TICKETS</Link>
         <Link className = 'link' to ='/cart'>CART</Link></div>
         <div className = 'account'>
-        <Link className = 'link' to ='/login'>ACCOUNT</Link>
+        <Link className = 'link2' to ='/login'>ACCOUNT</Link>
         </div>
       </div>
 

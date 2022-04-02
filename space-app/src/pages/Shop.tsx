@@ -5,6 +5,7 @@ import Food from './Food';
 import axios from 'axios'
 import {Route, Routes, Link} from 'react-router-dom'
 import Nav from './Nav'
+import Footer from './Footer'
 const Shop = () => {
     return (
         <>
@@ -13,14 +14,14 @@ const Shop = () => {
         <div className='shopNav'>
         <div className = 'shopImage'>
         <Link to = '/gear'><img  src = 'https://i.imgur.com/uwvs2lz.png'></img></Link>
-        <div className = 'shopGear'>GEAR</div>
+        <div className = 'shopGear'>BROWSE GEAR</div>
         </div>
         <div className = 'shopImage'>
          <Link to = '/food'><img  src = 'https://i.imgur.com/jerWGsZ.png'></img></Link>
-         <div className = 'shopFood'>FOOD</div>
+         <div className = 'shopFood'>BROWSE FOOD</div>
          </div>
         </div>
-
+        <Footer />
         </>
     )
 }

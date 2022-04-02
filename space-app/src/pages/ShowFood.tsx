@@ -4,6 +4,8 @@ import axios from 'axios'
 import {Route, Routes, Link} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import Nav from './Nav'
+import Footer from './Footer'
+
 const ShowFood = (props:any, fod:any) => {
     const params = useParams()
     const [food, setFood] = useState<any['']>([])
@@ -66,7 +68,7 @@ const ShowFood = (props:any, fod:any) => {
         <div className = 'offBlackShow'>
         <img className = 'showGearImage' src = {food.image}></img></div>
         <h1>{food.name}</h1>
-        <h2>${food.price}</h2>
+        <h2>${food.price_string}</h2>
         <div className = 'divider'></div>
         <h4>{food.description}</h4>
 
@@ -75,6 +77,7 @@ const ShowFood = (props:any, fod:any) => {
         </form>
         </div>
         </div>
+        <Footer />
         </>
     )
 }

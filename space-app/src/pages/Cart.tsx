@@ -5,6 +5,8 @@ import '../App.css';
 import {Link, Routes, Route, useNavigate,} from "react-router-dom";
 import Tickets from './Tickets'
 import Nav from './Nav'
+import DeleteIcon from '@mui/icons-material/Delete';
+import Footer from './Footer'
 
 const Cart:React.FC = (props:any) => {
     const [cartItems, setCartItems] = useState<any['']>([])
@@ -35,6 +37,8 @@ const Cart:React.FC = (props:any) => {
        }, [])
 
 
+
+
     return (
         <>
         <Nav />
@@ -50,25 +54,51 @@ const Cart:React.FC = (props:any) => {
 
       <div className = 'cartContainer'>
       {cartItems?.map((cart:any)=>{
+      if (Number(cart.price) < 1000) {
+          cart.price = String(cart.price) + ''
+      }
+      let sum = 0;
+
+      // cartItems.forEach(element => {
+      //     sum += element.price
+      // })
+
+
         return (
-        <div className = {cart.name}  key = {cart._id}>
+        <div className = 'cartCont'  key = {cart._id}>
         <div className = 'cartCard'>
+        <div className =
+        'cartImageStuff'>
         <div className = 'offBlackCart'>
-        <img src = {cart.image}></img></div>
+        <img className = 'cartImage' src = {cart.image}></img></div>
+
         <div className = 'cartStuff'>
         <h3>{cart.name}</h3>
 
         <h3>{cart.destination}</h3>
         <h4>{cart.date}</h4>
-        <h4>${cart.price}.00</h4>
+        <h4>${cart.price}</h4>
         </div>
         </div>
-        <button onClick = {(event) => {handleDelete(cart)}} >delete</button>
+        <DeleteIcon className = 'deleteCartButton' onClick = {(event) => {handleDelete(cart)}}/>
+        <h3 className = 'cartTotal'>${cart.price_string}</h3>
+
+        </div>
+
         </div>
          )
       })
+
+
     }
+    <div className = 'divideDiv2'>
+    <div className = 'cartDivider2'></div>
     </div>
+    </div>
+    <form className = 'checkoutDiv'>
+        <input type = 'submit' className = 'checkoutButton' value = 'CHECKOUT'></input>
+    </form>
+        <Footer />
 
         </>
     )

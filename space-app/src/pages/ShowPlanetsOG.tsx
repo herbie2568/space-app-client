@@ -70,9 +70,8 @@ const ShowPlanets = (props:any) => {
         BackdropComponent={Backdrop}
       >
         <Box sx = {style} className = 'showModal'>
-        <div className = 'carouselName'>
-        <Carousel className = 'carousel' showArrows={true} autoPlay = {true} infiniteLoop = {true} showStatus = {false} useKeyboardArrows = {true} showIndicators = {false} showThumbs = {false} width = {'500px'}>
-
+        <Carousel className = 'carousel' showArrows={true} autoPlay = {true} infiniteLoop = {true} showStatus = {false} useKeyboardArrows = {true} showIndicators = {false} showThumbs = {false}>
+        
                 <div>
                     <img className = 'carouselImage' src={props.img1} />
 
@@ -89,29 +88,14 @@ const ShowPlanets = (props:any) => {
 
         <div className = 'showInfo' key={props._id}>
           {/* <h2>{props.id}</h2> */}
-          <h1 className = 'showName'>{props.name.toUpperCase()}</h1>
+          <h2 className = 'showName'>{props.name}</h2>
           <h3 className = 'showDescription'>{props.description}</h3>
-          <h3 className = 'ticketPrice'>TICKET PRICE: <span>${props.ticket_price}</span></h3>
-
-
-         </div>
-         </div>
-         <div className = 'showShit'>
-         <div className = 'showShitText'>
-         <h3>YEAR DISCOVERED: <span>{props.date_found}</span></h3>
-         <h3>FEATURED ACTIVITY: <span>{props.activity}</span></h3>
-         <h3>WEATHER: <span>{props.weather}</span></h3>
-         <h3>DISTANCE FROM SUN: <span>{props.distance} miles</span></h3>
-         <h3>DAY LENGTH: <span>{props.day_length} hours</span></h3>
-         </div>
-         <div className = 'dividerButton'>
-
-         <form action="/tickets">
-    <button className = 'buyTicketButton'>BUY TICKETS</button>
-</form>
-
-         </div>
-
+          <h3>Ticket Price: <span>${props.ticket_price}</span></h3>
+          <h3>Year Discovered: <span>{props.date_found}</span></h3>
+          <h3>Featured Activity: <span>{props.activity}</span></h3>
+          <h3>Weather: <span>{props.weather}</span></h3>
+          <h3>Distance from Sun: <span>{props.distance} miles</span></h3>
+          <h3>Day Length: <span>{props.day_length} hours</span></h3>
          </div>
         </Box>
       </StyledModal>

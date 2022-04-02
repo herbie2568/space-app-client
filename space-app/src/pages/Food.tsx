@@ -6,10 +6,12 @@ import '../App.css';
 import {Link, Routes, Route, useNavigate,} from "react-router-dom";
 import ShowFood from './ShowFood'
 import Nav from './Nav'
+import Footer from './Footer'
 
 const FoodPage: React.FC = (props:any) => {
     const [food, setFood] = useState<[]>([])
     let navigate = useNavigate()
+    const [filter, setFilter] = useState('')
 
     const getFood = () => {
         axios
@@ -55,15 +57,22 @@ const FoodPage: React.FC = (props:any) => {
     <>
     <Nav />
     <img className = 'wallpaper' src = 'https://i.imgur.com/ywwncu9.jpg'></img>
-       <nav className = 'shopNavBar'>
-            <Link to = '/food'>FOOD</Link>
-            <Link to = '/gear'>GEAR</Link>
-        </nav>
+
 
     <h1 className= 'shopHeader'>FEATURED PRODUCTS</h1>
+    <div className = 'searchDiv'>
+    <input className = 'searchInput' type="text" placeholder="SEARCH..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
+      }}
+      ></input>
+      </div>
+      <nav className = 'shopNavBar'>
+           <Link className = 'shopLink' to = '/food'>FOOD</Link>
+           <Link className = 'shopLink' to = '/gear'>GEAR</Link>
+       </nav>
 
     <div className = 'foodContainer'>
-    {food?.map((fod:any, index)=>{
+    {food?.filter((search:any) =>
+        search.name.toLowerCase().includes(filter.toLowerCase())).map((fod:any, index)=>{
       return (
         <>
         <div>
@@ -75,7 +84,7 @@ const FoodPage: React.FC = (props:any) => {
       <div onClick = {() => {navigate('/food/' + fod._id)} } className = 'offBlack'>
       <img src = {fod.image}></img></div>
       <h3 className = 'foodName'>{fod.name}</h3>
-      <h4 className = 'foodPrice'>${fod.price}</h4>
+      <h4 className = 'foodPrice'>${fod.price_string}</h4>
 
       {/* <button onClick = {(event) => {handleDelete(fod)}} >delete</button> */}
       </div>
@@ -84,7 +93,7 @@ const FoodPage: React.FC = (props:any) => {
     })
   }
   </div>
-
+  <Footer />
     </>
   )
 }

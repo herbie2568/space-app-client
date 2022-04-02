@@ -5,9 +5,11 @@ import '../App.css';
 import {Link, Routes, Route, Router, useNavigate } from 'react-router-dom'
 import ShowGears from './ShowGears'
 import Nav from './Nav'
+import Footer from './Footer'
 
 const GearPage: React.FC = (props:any) => {
     const [gears, setGears] = useState<[]>([])
+    const [filter, setFilter] = useState('')
     let navigate = useNavigate()
 
 
@@ -30,15 +32,23 @@ const GearPage: React.FC = (props:any) => {
         <>
         <Nav/>
         <img className = 'wallpaper' src = 'https://i.imgur.com/ywwncu9.jpg'></img>
-        <nav className="shopNavBar">
-            <Link className = 'shopLink' to = '/food'>FOOD</Link>
-            <Link className = 'shopLink' to = '/gear'>GEAR</Link>
-        </nav>
+
 
         <h1 className = 'shopHeader'>FEATURED PRODUCTS</h1>
+        <div className = 'searchDiv'>
+        <input className = 'searchInput' type="text" placeholder="SEARCH..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
+          }}
+          ></input>
+          </div>
+
+          <nav className="shopNavBar">
+              <Link className = 'shopLink' to = '/food'>FOOD</Link>
+              <Link className = 'shopLink' to = '/gear'>GEAR</Link>
+          </nav>
 
           <div className = 'gearContainer'>
-            {gears?.map((gear:any, index)=>{
+            {gears?.filter((search:any) =>
+                search.name.toLowerCase().includes(filter.toLowerCase())).map((gear:any, index)=>{
             return (
                 <>
                 <div>
@@ -52,13 +62,14 @@ const GearPage: React.FC = (props:any) => {
             </div>
             <h3 className = 'foodName'>{gear.name}</h3>
 
-            <h4 className = 'foodPrice'>${gear.price}</h4>
+            <h4 className = 'foodPrice'>${gear.price_string}</h4>
             </div>
             </>
             )
             })
         }
         </div>
+        <Footer />
         </>
     )
 }
