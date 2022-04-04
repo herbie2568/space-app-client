@@ -42,13 +42,27 @@ const AddTickets = (props:any)=>{
 
 
     return (
-     <div className='ticketForm'>
+      <>
+      {/* <div className="ticket">  <img src='https://i.imgur.com/YmFyPYx.png'></img></div>    */}
 
-      <form className = 'addTicketForm' onSubmit={handleCart} >
-      
+
+
+      <div className='ticketForm'>
+
+      <form onSubmit={handleCart} >
+
+        <div className='ticketLogo'>
+      <img src="https://i.imgur.com/19IQ4Ai.png?1"></img>
+      </div>
+        <label htmlFor="date"></label>
+        <input type="date"
+        name="date"
+        value={ticket.date}
+        onChange={handleChange}/>
+
         <label htmlFor="destination">
         <select name="destination"onChange={handleChange}>
-        <option value='Your Destinations'>Destinations</option>
+        <option value='Your Destinations'>--DESTINATIONS--</option>
         <option value='Krypton'>Krypton</option>
         <option value='Iris-Cream'>Iris-Cream</option>
         <option value='Sauna XXA'>Sauna XXA</option>
@@ -58,27 +72,23 @@ const AddTickets = (props:any)=>{
         <option value='Pop-star Z'>Pop-star Z</option>
         </select></label>
 
-        <label htmlFor="date"></label>
-        <input type="date"
-        name="date"
-        value={ticket.date}
-        onChange={handleChange}/>
-
-
-        <label htmlFor="price"></label>
+        {/* <label htmlFor="price"></label>
         <input type="text" name="price"  placeholder='price'
         value={ticket.price}
-        onChange={handleChange}/>
+        onChange={handleChange}/> */}
 
 
         {/* <input type="text" name="destination"
         value={ticket.destination}
         onChange={handleChange}/> */}
-
-       <button> <input type="submit" onChange={handleNewCart}/></button>
+      <div className='submitBtn'>
+       <input type="submit" value = 'BUY' onChange={handleNewCart}/>
+       </div>
       </form>
 
     </div>
+
+    </>
         )
 
     }

@@ -213,12 +213,12 @@ useEffect(()=> {
 // }
   return(
       <>
-      
+
 
 
       <Routes>
       <Route path = '/home' element = {<Home/>}/>
-      <Route path = '/planets' element = {<Planets />}/>
+      <Route path = '/planets' element = {<Planets {...currentUser}  {...setCurrentUser}/>}/>
       <Route path = '/tickets' element = {<Tickets />}/>
       <Route path = '/shop' element = {<Shop />}/>
       <Route path = '/food/*' element = {<Food />}/>

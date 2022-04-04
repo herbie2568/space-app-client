@@ -2,6 +2,7 @@ import * as React from 'react'
 import {useState, useEffect} from 'react';
 import Nav from './Nav'
 import Footer from './Footer'
+import {Route, Routes, Link} from 'react-router-dom'
 
 const Login = (props:any) => {
 
@@ -27,7 +28,12 @@ const Login = (props:any) => {
         <div className = 'logoutDiv'>
             {props.toggleLogout ?
             <div className = 'logoutButtonDiv'>
-            <button className='logoutButton' onClick={props.handleLogout}>LOGOUT</button>
+            <Link to = '/planets'><button className='logoutButton2' > PLANETS</button></Link>
+            <Link to = '/tickets'><button className='logoutButton2' >BUY TICKETS</button></Link>
+            <Link to = '/shop'><button className='logoutButton2' >SHOP</button></Link>
+
+            <div><button className='logoutButton' onClick={props.handleLogout}>LOGOUT</button>
+            </div>
             </div>
             :
             <div className = 'buttonDiv'>

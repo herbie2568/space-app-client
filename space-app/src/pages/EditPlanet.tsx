@@ -75,60 +75,60 @@ return (
 
     <>
       <details>
-        <summary>Edit Planet</summary>
-        <form onSubmit={handleSubmit}>
+        <summary>EDIT PLANET</summary>
+        <form id = 'edit' onSubmit={handleSubmit}>
           <label htmlFor="name"></label>
-          <input
-            placeholder='name'
+          <input className = 'addInput'
+            placeholder='NAME...'
             type="text"
             name="name"
             value={planet.name}
             onChange={handleChange}
           />
           <label htmlFor="image"></label>
-          <input
-            placeholder='image'
+          <input className = 'addInput'
+            placeholder='IMAGE...'
             type="text"
             name="image"
             value={planet.image}
             onChange={handleChange}
           />
              <label htmlFor="description"> </label>
-          <input
-            placeholder='description'
+          <input className = 'addInput'
+            placeholder='DESCRIPTION...'
             type="text"
             name="description"
             value={planet.description}
             onChange={handleChange}
           />
              <label htmlFor="price"></label>
-          <input
-            placeholder='ticket price'
+          <input className = 'addInput'
+            placeholder='TICKET PRICE...'
             type="text"
             name="price"
             value={planet.price}
             onChange={handleChange}
           />
            <label htmlFor="date_found"></label>
-          <input
-            placeholder='year'
+          <input className = 'addInput'
+            placeholder='YEAR...'
             type="text"
             name="date_found"
             value={planet.date_found}
             onChange={handleChange}
           />
            <label htmlFor="activity"></label>
-          <input
-            placeholder='activity'
+          <input className = 'addInput'
+            placeholder='ACTIVITY...'
             type="text"
             name="activity"
             value={planet.activity}
             onChange={handleChange}
           />
-          <input className = 'addInput' type = 'text' placeholder = 'Weather...' onChange={handleChange}/><br/>
-          <input className = 'addInput' type = 'text' placeholder = 'Distance from Sun...' onChange={handleChange}/><br/>
-          <input className = 'addInput' type = 'text' placeholder = 'Day length in hours...' onChange={handleChange}/><br/>
-          <input type="submit" />
+          <input className = 'addInput' type = 'text' placeholder = 'WEATHER...' onChange={handleChange}/><br/>
+          <input className = 'addInput' type = 'text' placeholder = 'DISTANCE FROM SUN...' onChange={handleChange}/><br/>
+          <input className = 'addInput' type = 'text' placeholder = 'DAY LENGTH IN HOURS...' onChange={handleChange}/><br/>
+          <input className = 'submitButton' type="submit" value = 'SUBMIT CHANGES'/>
         </form>
       </details>
     </>

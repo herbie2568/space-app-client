@@ -7,6 +7,9 @@ import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import {
+  Link,
+} from "react-router-dom";
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -98,17 +101,25 @@ const ShowPlanets = (props:any) => {
          </div>
          <div className = 'showShit'>
          <div className = 'showShitText'>
-         <h3>YEAR DISCOVERED: <br/><span>{props.date_found}</span></h3>
-         <h3>FEATURED ACTIVITY: <br/><span>{props.activity}</span></h3>
-         <h3>WEATHER: <br/><span>{props.weather}</span></h3>
-         <h3>DISTANCE FROM SUN: <br/><span>{props.distance} miles</span></h3>
-         <h3>DAY LENGTH: <br/><span>{props.day_length} hours</span></h3>
+         <div>
+         <h3 className = 'stuff'>YEAR DISCOVERED: <br/><span>{props.date_found}</span></h3>
+         <h3 className = 'stuff'>FEATURED ACTIVITY: <br/><span>{props.activity}</span></h3>
          </div>
+         <div>
+         <h3 className = 'stuff'>DISTANCE FROM SUN: <br/><span>{props.distance} miles</span></h3>
+         <h3 className = 'stuff'>DAY LENGTH: <br/><span>{props.day_length} hours</span></h3>
+         </div>
+
+         </div>
+         <div className = 'lastRow'>
+         <h3 className = 'weather'>WEATHER: <br/><span>{props.weather}</span></h3>
+         <Link to ='/tickets'>
+   <button className = 'buyTicketButton'>BUY TICKETS</button>
+</Link>
+</div>
          <div className = 'dividerButton'>
 
-         <form action="/tickets">
-    <button className = 'buyTicketButton'>BUY TICKETS</button>
-</form>
+
 
          </div>
 

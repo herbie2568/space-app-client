@@ -153,7 +153,7 @@ const Planets:React.FC  = (props:any) => {
         : null }
 
         {props.username ?
-        <button onClick = {(event) => {handleDelete(planet)}} >delete</button>
+        <button className = 'deleteButton' onClick = {(event) => {handleDelete(planet)}} >USE DEATH STAR</button>
         : null }
         </div>
          )

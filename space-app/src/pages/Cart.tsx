@@ -10,6 +10,7 @@ import Footer from './Footer'
 
 const Cart:React.FC = (props:any) => {
     const [cartItems, setCartItems] = useState<any['']>([])
+    let [sum, setSum] = useState(0)
     const getCartItems = () => {
         axios
         .get('https://space-meteor.herokuapp.com/cart')
@@ -36,7 +37,13 @@ const Cart:React.FC = (props:any) => {
         getCartItems()
        }, [])
 
+  //  let total: number = 0;
 
+  //     cartItems.forEach(a => {
+  //         total += a.price
+  //     })
+
+  //    setSum(total)
 
 
     return (
@@ -57,14 +64,13 @@ const Cart:React.FC = (props:any) => {
       if (Number(cart.price) < 1000) {
           cart.price = String(cart.price) + ''
       }
-      // let sum: number = 0;
-      //
-      // cartItems.forEach(a => {
-      //     sum += a.price
-      // })
-      //
-      // console.log(sum);
+    //   let total: number = 0;
 
+    //   cartItems.forEach(a => {
+    //       total += a.price
+    //   })
+
+    //  setSum(total)
 
 
         return (
@@ -86,6 +92,7 @@ const Cart:React.FC = (props:any) => {
         <DeleteIcon className = 'deleteCartButton' onClick = {(event) => {handleDelete(cart)}}/>
         <h3 className = 'cartTotal'>${cart.price_string}</h3>
 
+
         </div>
 
         </div>
@@ -101,6 +108,7 @@ const Cart:React.FC = (props:any) => {
     <form className = 'checkoutDiv'>
         <input type = 'submit' className = 'checkoutButton' value = 'CHECKOUT'></input>
     </form>
+    <h3 className = 'cartTotal'>${sum}</h3>
         <Footer />
 
         </>
