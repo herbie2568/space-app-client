@@ -477,12 +477,28 @@ span {
 
 .shopLink {
   font-weight: 200;
-  font-size: 18px;
+  font-size: 20px;
   transition-duration: 0.4s;
 }
 
 .shopLink:hover {
   transform: scale(1.05);
+}
+
+.shopLinkGear {
+    font-weight: 200;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    text-decoration: underline;
+}
+
+.shopLinkGear:hover {
+  transform: scale(1.05);
+}
+
+.line {
+    height: 1px;
+    background: white;
 }
 
 .btn {

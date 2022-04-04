@@ -43,7 +43,10 @@ const GearPage: React.FC = (props:any) => {
 
           <nav className="shopNavBar">
               <Link className = 'shopLink' to = '/food'>FOOD</Link>
+              <div>
               <Link className = 'shopLink' to = '/gear'>GEAR</Link>
+              <div className = 'line'></div>
+              </div>
           </nav>
 
           <div className = 'gearContainer'>

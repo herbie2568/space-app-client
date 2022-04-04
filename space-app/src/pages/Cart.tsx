@@ -57,11 +57,14 @@ const Cart:React.FC = (props:any) => {
       if (Number(cart.price) < 1000) {
           cart.price = String(cart.price) + ''
       }
-      let sum = 0;
-
-      // cartItems.forEach(element => {
-      //     sum += element.price
+      // let sum: number = 0;
+      //
+      // cartItems.forEach(a => {
+      //     sum += a.price
       // })
+      //
+      // console.log(sum);
+
 
 
         return (
@@ -77,7 +80,7 @@ const Cart:React.FC = (props:any) => {
 
         <h3>{cart.destination}</h3>
         <h4>{cart.date}</h4>
-        <h4>${cart.price}</h4>
+        <h4>${cart.price_string}</h4>
         </div>
         </div>
         <DeleteIcon className = 'deleteCartButton' onClick = {(event) => {handleDelete(cart)}}/>

@@ -66,8 +66,13 @@ const FoodPage: React.FC = (props:any) => {
       ></input>
       </div>
       <nav className = 'shopNavBar'>
-           <Link className = 'shopLink' to = '/food'>FOOD</Link>
-           <Link className = 'shopLink' to = '/gear'>GEAR</Link>
+      <div>
+      <Link className = 'shopLink' to = '/food'>FOOD</Link>
+      <div className = 'line'></div>
+      </div>
+      <Link className = 'shopLink' to = '/gear'>GEAR</Link>
+
+
        </nav>
 
     <div className = 'foodContainer'>
